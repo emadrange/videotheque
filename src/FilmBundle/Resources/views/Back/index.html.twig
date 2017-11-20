@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Administration des films
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/back.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include '@Film/Back/header.html.twig' %}
+    <section>
+        Nombre de films : {{ films | length }}<br>
+        <a href="{{ path('admin_film_insert') }}">Ajouter un film</a>
+    </section>
+    <section>
+        <ul>
+            {% for film in films %}
+                <li><span class="title">{{ film.title }}</span> -
+                    <a href="{{ path('admin_film_show', {'id': film.id}) }}">Voir la fiche</a> -
+                    <a href="{{ path('admin_film_modify', {'id': film.id}) }}">Modifier</a> -
+                    <a href="{{ path('admin_film_delete', {'id': film.id}) }}" class="delete">Supprimer</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% include '@Film/Back/footer.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/film.js') }}"></script>
+{% endblock %}

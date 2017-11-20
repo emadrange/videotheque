@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form_prod with 'FilmBundle:Form:formErrors.html.twig' %}
+
+{% block title %}
+    Administration des films
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/back.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include '@Film/Back/header.html.twig' %}
+
+    <section>
+        {{ form_start(form_prod) }}
+        <fieldset>
+            <legend>Modifier la production de film</legend>
+            <div>
+                {{ form_errors(form_prod.name) }}
+                {{ form_label(form_prod.name) }}
+                {{ form_widget(form_prod.name) }}
+            </div>
+            <div>
+                {{ form_errors(form_prod.logo) }}
+                {{ form_label(form_prod.logo) }}
+                {{ form_widget(form_prod.logo) }}
+            </div>
+        </fieldset>
+        <fieldset class="action">
+            {{ form_row(form_prod.submit) }}
+        </fieldset>
+        {{ form_rest(form_prod) }}
+        {{ form_end(form_prod) }}
+    </section>
+
+    {% include '@Film/Back/footer.html.twig' %}
+{% endblock %}

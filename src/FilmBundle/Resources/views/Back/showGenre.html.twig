@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Administration des films - Les genres
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/back.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include '@Film/Back/header.html.twig' %}
+    <section>
+        <a href="{{ path('admin_genre_insert') }}">Ajouter un genre</a>
+    </section>
+    <section>
+        <ul>
+        {% for genre in genres %}
+            <li><span class="title">{{ genre.name }}</span> -
+                <a href="{{ path('admin_genre_modify', {'id': genre.id}) }}">Modifier</a> -
+                <a href="{{ path('admin_genre_delete', {'id': genre.id}) }}" class="delete">Supprimer</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </section>
+    {% include '@Film/Back/footer.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/genre.js') }}"></script>
+{% endblock %}

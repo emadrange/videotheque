@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Administration des films - Les productions
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/back.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include '@Film/Back/header.html.twig' %}
+    <section>
+        <a href="{{ path('admin_prod_insert') }}">Ajouter une production</a>
+    </section>
+    <section>
+        <ul>
+        {% for prod in prods %}
+            <li><span class="title">{{ prod.name }}</span> -
+                <a href="{{ path('admin_prod_modify', {'id': prod.id}) }}">Modifier</a> -
+                <a href="{{ path('admin_prod_delete', {'id': prod.id}) }}" class="delete">Supprimer</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </section>
+    {% include '@Film/Back/footer.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/production.js') }}"></script>
+{% endblock %}

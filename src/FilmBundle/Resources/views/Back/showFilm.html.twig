@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Administration des films
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/back.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include '@Film/Back/header.html.twig' %}
+    <section>
+        <h2>{{ film.title }}</h2>
+        <h3>{{ film.author }}</h3>
+        <div class="card">
+            <div class="left-card">
+                <img src="{{ asset('images/' ~ film.cover) }}" alt="{{ film.cover }}" title="{{ film.title }}"><br>
+                <img src="{{ asset('images/logo/' ~ film.production.logo) }}" alt="{{ film.production.logo }}" title="{{ film.production.name }}">
+            </div>
+            <div class="right-card">
+                Sorti le : {{ film.releaseyear | date('d-m-Y') }}<br>
+                Durée : {{ film.duration }}<br>
+                Genre : {{ film.genre.name }}
+                <p>
+                    {{ film.actor }}
+                </p>
+                <p>
+                    {{ film.resume }}
+                </p>
+            </div>
+        </div>
+        <a href="{{ path('admin_homepage') }}">Retour à l'administration</a>
+    </section>
+    {% include '@Film/Back/footer.html.twig' %}
+{% endblock %}

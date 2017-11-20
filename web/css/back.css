@@ -1,0 +1,145 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: outset 1px black;
+    box-shadow: 2px 2px 2px gray;
+    background-color: #aac4da;
+    color: #334b5f;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px gray;
+    width: 70%;
+}
+
+header ul.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+header ul.menu li {
+    list-style: none;
+}
+
+header ul.menu li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #334b5f;
+    text-shadow: 1px 1px 1px gray;
+}
+
+header ul.menu li a.active {
+    text-decoration: underline;
+}
+
+header ul.menu li a:hover {
+    color: #0088ff;
+    text-decoration: underline;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+section {
+    margin: 10px;
+    color: #334b5f;
+}
+
+section h2 {
+    font-size: 1.8rem;
+}
+
+section h3 {
+    font-size: 1.4rem;
+}
+
+section div.card {
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+
+}
+
+section div.card div.left-card {
+    width: 20%;
+    text-align: center;
+}
+
+section div.card div.right-card {
+    width: 80%;
+}
+
+section div.card div.right-card p {
+    margin: 10px 0;
+}
+
+section li {
+    list-style: none;
+}
+
+section li span.title {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+section a {
+    text-decoration: underline;
+    color: #334b5f;
+}
+
+section a:hover{
+    color: #0088ff;
+}
+
+form.form fieldset {
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 2px 2px 4px gray;
+    border-radius: 8px;
+    background-color: #dbe8f3;
+}
+
+form.form.login fieldset {
+    width: 30%;
+}
+
+form.form fieldset div {
+    margin: 6px;
+}
+
+form.form fieldset.action {
+    display: flex;
+    justify-content: center;
+}
+
+form.form label {
+    display: inline-block;
+    width: 25%;
+    color: #334b5f;
+}
+
+form.form.login label {
+    width: 40%;
+}
+
+form.form .error {
+    background-color: darkred;
+    color: yellow;
+    margin: 4px 0;
+    padding: 0 4px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    border: solid 1px black;
+    box-shadow: 2px 2px 2px gray;
+    background-color: #aac4da;
+    color: #334b5f;
+}

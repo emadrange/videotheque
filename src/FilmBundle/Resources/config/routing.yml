@@ -1,0 +1,69 @@
+film_homepage:
+    path:     /
+    defaults: { _controller: FilmBundle:Default:index }
+
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: FilmBundle:Back:index }
+
+admin_film_show:
+    path:     /admin/film/show/{id}
+    defaults: { _controller: FilmBundle:Back:showFilm }
+    requirements:
+        id:   '\d+'
+
+admin_film_insert:
+    path:     /admin/film/insert
+    defaults: { _controller: FilmBundle:Back:insertFilm }
+
+admin_film_modify:
+    path:     /admin/film/modify/{id}
+    defaults: { _controller: FilmBundle:Back:modifyFilm }
+    requirements:
+        id:   '\d+'
+
+admin_film_delete:
+    path:     /admin/film/delete/{id}
+    defaults: { _controller: FilmBundle:Back:deleteFilm }
+    requirements:
+        id:   '\d+'
+
+admin_genre_show:
+    path:     /admin/genre
+    defaults: { _controller: FilmBundle:Back:showGenre }
+
+admin_genre_insert:
+    path:     /admin/genre/insert
+    defaults: { _controller: FilmBundle:Back:insertGenre }
+
+admin_genre_modify:
+    path:     /admin/genre/modify/{id}
+    defaults: { _controller: FilmBundle:Back:modifyGenre }
+    requirements:
+        id:   '\d+'
+
+admin_genre_delete:
+    path:     /admin/genre/delete/{id}
+    defaults: { _controller: FilmBundle:Back:deleteGenre }
+    requirements:
+        id:   '\d+'
+
+admin_prod_show:
+    path:     /admin/prod
+    defaults: { _controller: FilmBundle:Back:showProd }
+
+admin_prod_insert:
+    path:     /admin/prod/insert
+    defaults: { _controller: FilmBundle:Back:insertProd }
+
+admin_prod_modify:
+    path:     /admin/prod/modify/{id}
+    defaults: { _controller: FilmBundle:Back:modifyProd }
+    requirements:
+        id:   '\d+'
+
+admin_prod_delete:
+    path:     /admin/prod/delete/{id}
+    defaults: { _controller: FilmBundle:Back:deleteProd }
+    requirements:
+        id:   '\d+'

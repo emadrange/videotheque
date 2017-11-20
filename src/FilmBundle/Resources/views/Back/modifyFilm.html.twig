@@ -1,0 +1,73 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form_film with 'FilmBundle:Form:formErrors.html.twig' %}
+
+{% block title %}
+    Administration des films
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/back.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include '@Film/Back/header.html.twig' %}
+    <section>
+        {{ form_start(form_film) }}
+        <fieldset>
+            <legend>Modifier les informations du film</legend>
+            <div>
+                {{ form_errors(form_film.title) }}
+                {{ form_label(form_film.title) }}
+                {{ form_widget(form_film.title) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.author) }}
+                {{ form_label(form_film.author) }}
+                {{ form_widget(form_film.author) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.releaseyear) }}
+                {{ form_label(form_film.releaseyear) }}
+                {{ form_widget(form_film.releaseyear) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.duration) }}
+                {{ form_label(form_film.duration) }}
+                {{ form_widget(form_film.duration) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.genre) }}
+                {{ form_label(form_film.genre) }}
+                {{ form_widget(form_film.genre) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.actor) }}
+                {{ form_label(form_film.actor) }}
+                {{ form_widget(form_film.actor) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.resume) }}
+                {{ form_label(form_film.resume) }}
+                {{ form_widget(form_film.resume) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.production) }}
+                {{ form_label(form_film.production) }}
+                {{ form_widget(form_film.production) }}
+            </div>
+            <div>
+                {{ form_errors(form_film.cover) }}
+                {{ form_label(form_film.cover) }}
+                {{ form_widget(form_film.cover) }}
+            </div>
+        </fieldset>
+        <fieldset class="action">
+            {{ form_row(form_film.submit) }}
+        </fieldset>
+        {{ form_rest(form_film) }}
+        {{ form_end(form_film) }}
+    </section>
+    {% include '@Film/Back/footer.html.twig' %}
+{% endblock %}

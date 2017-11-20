@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form_genre with 'FilmBundle:Form:formErrors.html.twig' %}
+
+{% block title %}
+    Administration des films
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/back.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include '@Film/Back/header.html.twig' %}
+
+    <section>
+        {{ form_start(form_genre) }}
+        <fieldset>
+            <legend>Modifier le genre de film</legend>
+            <div>
+                {{ form_errors(form_genre.name) }}
+                {{ form_label(form_genre.name) }}
+                {{ form_widget(form_genre.name) }}
+            </div>
+        </fieldset>
+        <fieldset class="action">
+            {{ form_row(form_genre.submit) }}
+        </fieldset>
+        {{ form_rest(form_genre) }}
+        {{ form_end(form_genre) }}
+    </section>
+
+    {% include '@Film/Back/footer.html.twig' %}
+{% endblock %}
