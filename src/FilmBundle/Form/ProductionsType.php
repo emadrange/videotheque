@@ -15,10 +15,10 @@ class ProductionsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', TextType::class, array(
-            'label' => 'Nom'
+            'label' => 'forms.name'
         ))
             ->add('logo', TextType::class, array(
-                'label' => 'Logo',
+                'label' => 'forms.logo',
                 'required' => false
             ));
     }
@@ -29,7 +29,8 @@ class ProductionsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'FilmBundle\Entity\Productions'
+            'data_class' => 'FilmBundle\Entity\Productions',
+            'translation_domain' => 'messages'
         ));
     }
 

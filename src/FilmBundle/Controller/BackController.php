@@ -52,9 +52,9 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'Enregistrer'))
+                'label' => 'forms.save'))
             ->add('clear', ResetType::class, array(
-                'label' => 'Effacer'));
+                'label' => 'forms.clear'));
 
         $form->handleRequest($request);
 
@@ -88,7 +88,7 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'Enregistrer'
+                'label' => 'forms.save'
             ));
 
         $form->handleRequest($request);
@@ -123,7 +123,7 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'Enregistrer'
+                'label' => 'forms.save'
             ));
 
         $form->handleRequest($request);
@@ -147,11 +147,11 @@ class BackController extends Controller
      * Modify the film
      *
      * @param Request $request
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function modifyFilmAction(Request $request, $id)
+    public function modifyFilmAction(Request $request, int $id)
     {
         $em = $this->getDoctrine()->getManager();
         $film = $em->getRepository('FilmBundle:Films')->find($id);
@@ -162,7 +162,7 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'Enregistrer'
+                'label' => 'forms.save'
             ));
 
         $form->handleRequest($request);
@@ -182,11 +182,11 @@ class BackController extends Controller
      * Modify the genre
      *
      * @param Request $request
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function modifyGenreAction(Request $request, $id)
+    public function modifyGenreAction(Request $request, int $id)
     {
         $em = $this->getDoctrine()->getManager();
         $genre = $em->getRepository('FilmBundle:Genres')->find($id);
@@ -197,7 +197,7 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'Enregistrer'
+                'label' => 'forms.save'
             ));
 
         $form->handleRequest($request);
@@ -217,11 +217,11 @@ class BackController extends Controller
      * Modify the production
      *
      * @param Request $request
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function modifyProdAction(Request $request, $id)
+    public function modifyProdAction(Request $request, int $id)
     {
         $em = $this->getDoctrine()->getManager();
         $prod = $em->getRepository('FilmBundle:Productions')->find($id);
@@ -232,7 +232,7 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'Enregistrer'
+                'label' => 'forms.save'
             ));
 
         $form->handleRequest($request);
@@ -251,12 +251,11 @@ class BackController extends Controller
     /**
      * Complete film file
      *
-     * @param Request $request
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\Response
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function showFilmAction(Request $request, $id)
+    public function showFilmAction(int $id)
     {
         $repository = $this->getDoctrine()->getManager()->getRepository('FilmBundle:Films');
         $film = $repository->findFullMovie($id);
@@ -267,11 +266,10 @@ class BackController extends Controller
     /**
      * List of genres
      *
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function showGenreAction(Request $request)
+    public function showGenreAction()
     {
         $repository = $this->getDoctrine()->getManager()->getRepository('FilmBundle:Genres');
         $genres = $repository->findAllGenreByOrder();
@@ -282,11 +280,10 @@ class BackController extends Controller
     /**
      * List of productions
      *
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function showProdAction(Request $request)
+    public function showProdAction()
     {
         $repository = $this->getDoctrine()->getManager()->getRepository('FilmBundle:Productions');
         $prods = $repository->findAllProdByOrder();
@@ -297,12 +294,11 @@ class BackController extends Controller
     /**
      * Remove genre
      *
-     * @param Request $request
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function deleteGenreAction(Request $request, $id)
+    public function deleteGenreAction(int $id)
     {
         $em = $this->getDoctrine()->getManager();
         $genre = $em->getRepository('FilmBundle:Genres')->find($id);
@@ -315,12 +311,11 @@ class BackController extends Controller
     /**
      * Remove production
      *
-     * @param Request $request
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function deleteProdAction(Request $request, $id)
+    public function deleteProdAction(int $id)
     {
         $em = $this->getDoctrine()->getManager();
         $prod = $em->getRepository('FilmBundle:Productions')->find($id);
@@ -333,12 +328,11 @@ class BackController extends Controller
     /**
      * Remove film
      *
-     * @param Request $request
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Security("has_role('ROLE_ADMIN')")
      */
-    public function deleteFilmAction(Request $request, $id)
+    public function deleteFilmAction(int $id)
     {
         $em = $this->getDoctrine()->getManager();
         $film = $em->getRepository('FilmBundle:Films')->find($id);

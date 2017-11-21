@@ -15,7 +15,7 @@ class GenresType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', TextType::class, array(
-            'label' => 'Libellé'
+            'label' => 'forms.wording'
         ));
     }
     
@@ -25,7 +25,8 @@ class GenresType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'FilmBundle\Entity\Genres'
+            'data_class' => 'FilmBundle\Entity\Genres',
+            'translation_domain' => 'messages'
         ));
     }
 

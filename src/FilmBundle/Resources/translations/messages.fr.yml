@@ -1,0 +1,15 @@
+forms:
+    title: Titre
+    author: Auteur
+    cover: Jaquette
+    resume: Résumé
+    releaseyear: Année de sorti
+    duration: Durée
+    actor: Acteur
+    genre: Genre
+    production: Production
+    wording: Libellé
+    name: Nom
+    logo: Logo
+    save: Enregistrer
+    clear: Effacer

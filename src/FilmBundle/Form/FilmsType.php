@@ -21,30 +21,29 @@ class FilmsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title', TextType::class, array(
-            'label' => 'Titre'
+            'label' => 'forms.title'
         ))
             ->add('author', TextType::class, array(
-                'label' => 'Auteur'
+                'label' => 'forms.author'
             ))
             ->add('cover', TextType::class, array(
-                'label' => 'Jaquette'
+                'label' => 'forms.cover'
             ))
             ->add('resume', TextareaType::class, array(
-                'label' => 'Résumé'
+                'label' => 'forms.resume'
             ))
             ->add('releaseyear', DateTimeType::class, array(
-                'label'       => 'Année de sortie',
+                'label'       => 'forms.releaseyear',
                 'years'       => range(1935, 2040),
                 'format'      => 'dd-MM-yyyy',
                 'widget'      => 'single_text',
-                'placeholder' => 'dd-mm-yyyy',
-                'data'        => new \DateTime()
+                'placeholder' => 'dd-mm-yyyy'
             ))
             ->add('duration', TextType::class, array(
-                'label' => 'Durée'
+                'label' => 'forms.duration'
             ))
             ->add('actor', TextareaType::class, array(
-                'label' => 'Acteur'
+                'label' => 'forms.actor'
             ))
             ->add('genre', EntityType::class, array(
                 'class' => 'FilmBundle\Entity\Genres',
@@ -53,7 +52,7 @@ class FilmsType extends AbstractType
                         ->orderBy('g.name', 'ASC');
                 },
                 'choice_label' => 'name',
-                'label' => 'Genre'
+                'label' => 'forms.genre'
             ))
             ->add('production', EntityType::class, array(
                 'class' => 'FilmBundle\Entity\Productions',
@@ -62,7 +61,7 @@ class FilmsType extends AbstractType
                         ->orderBy('p.name', 'ASC');
                 },
                 'choice_label' => 'name',
-                'label' => 'Production'
+                'label' => 'forms.production'
             ));
     }
     
@@ -72,7 +71,8 @@ class FilmsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'FilmBundle\Entity\Films'
+            'data_class' => 'FilmBundle\Entity\Films',
+            'translation_domain' => 'messages'
         ));
     }
 
