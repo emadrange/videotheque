@@ -2,11 +2,21 @@
     <h1>Administration du site</h1>
     {% set pathinfo = app.request.pathInfo %}
     {% if is_granted('ROLE_ADMIN') %}
-    <ul class="menu">
-        <li><a href="{{ path('admin_homepage') }}" class="{{ pathinfo == '/admin' ? 'active' : '' }}">Films</a></li>
-        <li><a href="{{ path('admin_genre_show') }}" class="{{ pathinfo == '/admin/genre' ? 'active' : '' }}">Genres</a></li>
-        <li><a href="{{ path('admin_prod_show') }}" class="{{ pathinfo == '/admin/prod' ? 'active' : '' }}">Productions</a></li>
-        <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
-    </ul>
+    <nav>
+        <ul class="menu">
+            <li>
+                <a href="{{ path('admin_homepage') }}" class="{{ pathinfo == '/admin' ? 'active' : '' }}">Films</a>
+            </li>
+            <li>
+                <a href="{{ path('admin_genre_show') }}" class="{{ pathinfo == '/admin/genre' ? 'active' : '' }}">Genres</a>
+            </li>
+            <li>
+                <a href="{{ path('admin_prod_show') }}" class="{{ pathinfo == '/admin/prod' ? 'active' : '' }}">Productions</a>
+            </li>
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+            </li>
+        </ul>
+    </nav>
     {% endif %}
 </header>
