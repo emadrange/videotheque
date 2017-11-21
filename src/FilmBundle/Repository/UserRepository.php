@@ -1,6 +1,6 @@
 <?php
 
-namespace FilmBundle\Entity;
+namespace FilmBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

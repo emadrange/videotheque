@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class User
  * @package FilmBundle\Entity
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="FilmBundle\Repository\UserRepository")
  * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser
