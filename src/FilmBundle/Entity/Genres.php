@@ -30,6 +30,10 @@ class Genres
      *     max="100",
      *     maxMessage="validator.genre.name.max"
      * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9éèàùëê\s-]*$/i",
+     *     message="validator.genre.name.regex"
+     * )
      */
     private $name;
 

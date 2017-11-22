@@ -32,6 +32,10 @@ class Films
      *     minMessage="validator.title.min",
      *     maxMessage="validator.title.max"
      * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9éèàù\s-,;]*$/i",
+     *     message="validator.title.regex"
+     * )
      */
     private $title;
 
@@ -45,6 +49,7 @@ class Films
      *     minMessage="validator.author.min",
      *     maxMessage="validator.author.max"
      * )
+     *
      */
     private $author;
 
@@ -74,6 +79,10 @@ class Films
      *     minMessage="validator.cover.min",
      *     maxMessage="validator.cover.max"
      * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9-_]*\.(jpg|png|gif)$/i",
+     *     message="validator.cover.regex"
+     * )
      */
     private $cover;
 
@@ -84,6 +93,10 @@ class Films
      * @Assert\Length(
      *     max="500",
      *     maxMessage="validator.resume.max"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9éèàùüûôêë\(\)\s-,;\.':!]*$/i",
+     *     message="validator.resume.regex"
      * )
      */
     private $resume;
@@ -114,6 +127,10 @@ class Films
      *     max="50",
      *     maxMessage="validator.duration.max"
      * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9\s-\.]*$/i",
+     *     message="validator.duration.regex"
+     * )
      */
     private $duration;
 
@@ -124,6 +141,10 @@ class Films
      * @Assert\Length(
      *     max="255",
      *     maxMessage="validator.actor.max"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9éèàùüûôêë\(\)\s-,;\.':!]*$/i",
+     *     message="validator.actor.regex"
      * )
      */
     private $actor;

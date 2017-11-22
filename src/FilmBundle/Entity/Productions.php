@@ -32,6 +32,10 @@ class Productions
      *     minMessage="validator.production.name.min",
      *     maxMessage="validator.production.name.max"
      * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9éèàùëüê\s-]*$/i",
+     *     message="validator.production.name.regex"
+     * )
      */
     private $name;
 
@@ -44,6 +48,10 @@ class Productions
      *     max="50",
      *     minMessage="validator.production.logo.min",
      *     maxMessage="validator.production.logo.min"
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9-_]*\.(jpg|png|gif)$/i",
+     *     message="validator.production.logo.regex"
      * )
      */
     private $logo;
