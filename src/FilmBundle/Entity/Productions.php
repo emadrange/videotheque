@@ -29,8 +29,8 @@ class Productions
      * @Assert\Length(
      *     min="2",
      *     max="200",
-     *     minMessage="Le nom de la production est trop court",
-     *     maxMessage="Le nom de la production est trop long"
+     *     minMessage="validator.production.name.min",
+     *     maxMessage="validator.production.name.max"
      * )
      */
     private $name;
@@ -42,8 +42,8 @@ class Productions
      * @Assert\Length(
      *     min="5",
      *     max="50",
-     *     minMessage="5 caractères minimum pour le logo",
-     *     maxMessage="50 caractères maximum pour le logo"
+     *     minMessage="validator.production.logo.min",
+     *     maxMessage="validator.production.logo.min"
      * )
      */
     private $logo;

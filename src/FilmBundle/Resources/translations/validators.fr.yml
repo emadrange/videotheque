@@ -1,0 +1,28 @@
+validator:
+    title:
+        min: "Le titre est trop court."
+        max: "Le titre est trop long."
+    author:
+        min: "Le nom de l'auteur est trop court."
+        max: "Le nom de l'auteur est trop long."
+    cover:
+        min: "Minimum 5 caractères pour la jaquette."
+        max: "Maximum 50 caractères pour la jaquette."
+    resume:
+        max: "Le résumé doit faire maximum 500 caractères."
+    releaseyear:
+        format: "La date n'est pas au bon format (d-m-Y)."
+    duration:
+        max: "Maximum 50 caractères pour la durée."
+    actor:
+        max: "Maximum 255 caractères pour les acteurs."
+    genre:
+        name:
+            max: "Maximum 100 caractères pour le genre."
+    production:
+        name:
+            max: "Le nom de la production est trop court."
+            min: "Le nom de la production est trop long."
+        logo:
+            min: "5 caractères minimum pour le logo."
+            max: "50 caractères maximum pour le logo."

@@ -29,8 +29,8 @@ class Films
      * @Assert\Length(
      *     min="2",
      *     max="255",
-     *     minMessage="Le titre est trop court",
-     *     maxMessage="Le titre est trop long"
+     *     minMessage="validator.title.min",
+     *     maxMessage="validator.title.max"
      * )
      */
     private $title;
@@ -42,8 +42,8 @@ class Films
      * @Assert\Length(
      *     min="2",
      *     max="100",
-     *     minMessage="Le nom de l'auteur est trop court",
-     *     maxMessage="Le nom de l'auteur est trop long"
+     *     minMessage="validator.author.min",
+     *     maxMessage="validator.author.max"
      * )
      */
     private $author;
@@ -71,8 +71,8 @@ class Films
      * @Assert\Length(
      *     min="5",
      *     max="50",
-     *     minMessage="Minimum 5 caractères pour la jaquette",
-     *     maxMessage="Maximum 50 caractères pour la jaquette"
+     *     minMessage="validator.cover.min",
+     *     maxMessage="validator.cover.max"
      * )
      */
     private $cover;
@@ -83,7 +83,7 @@ class Films
      * @ORM\Column(name="resume", type="string", length=500, nullable=true)
      * @Assert\Length(
      *     max="500",
-     *     maxMessage="Le résumé doit faire maximum 500 caractères"
+     *     maxMessage="validator.resume.max"
      * )
      */
     private $resume;
@@ -99,6 +99,10 @@ class Films
      * @var \DateTime
      *
      * @ORM\Column(name="release_year", type="datetime", nullable=true)
+     * @Assert\DateTime(
+     *     format="d-m-Y",
+     *     message="validator.releaseyear.format"
+     * )
      */
     private $releaseyear;
 
@@ -108,7 +112,7 @@ class Films
      * @ORM\Column(name="duration", type="string", length=50, nullable=true)
      * @Assert\Length(
      *     max="50",
-     *     maxMessage="Maximum 50 caractères pour la durée"
+     *     maxMessage="validator.duration.max"
      * )
      */
     private $duration;
@@ -119,7 +123,7 @@ class Films
      * @ORM\Column(name="actor", type="string", length=255, nullable=true)
      * @Assert\Length(
      *     max="255",
-     *     maxMessage="Maximum 255 caractères pour les acteurs"
+     *     maxMessage="validator.actor.max"
      * )
      */
     private $actor;

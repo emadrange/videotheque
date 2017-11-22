@@ -28,7 +28,7 @@ class Genres
      * @ORM\Column(name="name", type="string", length=100)
      * @Assert\Length(
      *     max="100",
-     *     maxMessage="Maximum 100 caractères pour le genre"
+     *     maxMessage="validator.genre.name.max"
      * )
      */
     private $name;
