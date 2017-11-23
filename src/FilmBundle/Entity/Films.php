@@ -79,9 +79,9 @@ class Films
      *     minMessage="validator.cover.min",
      *     maxMessage="validator.cover.max"
      * )
-     * @Assert\Regex(
-     *     pattern="/^[a-z0-9-_]*\.(jpg|png|gif)$/i",
-     *     message="validator.cover.regex"
+     * @Assert\Image(
+     *     mimeTypes={"image/png","image/jpeg"},
+     *     mimeTypesMessage="validator.cover.mimetype"
      * )
      */
     private $cover;

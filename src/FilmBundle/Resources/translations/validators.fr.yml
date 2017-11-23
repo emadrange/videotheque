@@ -10,7 +10,7 @@ validator:
     cover:
         min: "Minimum 5 caractères pour la jaquette."
         max: "Maximum 50 caractères pour la jaquette."
-        regex: "La jaquette n'est pas au bon format."
+        mimetype: "La jaquette n'est pas au bon format."
     resume:
         max: "Le résumé doit faire maximum 500 caractères."
         regex: "Le résumé comporte des caractères interdits."

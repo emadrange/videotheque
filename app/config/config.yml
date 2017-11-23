@@ -8,6 +8,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    logo_path: '%kernel.project_dir%/web/images/logo'
+    cover_path: '%kernel.project_dir%/web/images'
 
 framework:
     #esi: ~
