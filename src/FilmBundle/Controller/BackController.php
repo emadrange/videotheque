@@ -197,7 +197,10 @@ class BackController extends Controller
             return $this->redirect($this->generateUrl('admin_homepage'));
         }
 
-        return $this->render('FilmBundle:Back:modifyFilm.html.twig', array('form_film' => $form->createView()));
+        return $this->render('FilmBundle:Back:modifyFilm.html.twig', array(
+            'form_film' => $form->createView(),
+            'title' => $film->getTitle()
+        ));
     }
 
     /**
@@ -232,7 +235,10 @@ class BackController extends Controller
             return $this->redirect($this->generateUrl('admin_genre_show'));
         }
 
-        return $this->render('FilmBundle:Back:modifyGenre.html.twig', array('form_genre' => $form->createView()));
+        return $this->render('FilmBundle:Back:modifyGenre.html.twig', array(
+            'form_genre' => $form->createView(),
+            'name' => $genre->getName()
+        ));
     }
 
     /**
@@ -274,7 +280,10 @@ class BackController extends Controller
             return $this->redirect($this->generateUrl('admin_prod_show'));
         }
 
-        return $this->render('FilmBundle:Back:modifyProd.html.twig', array('form_prod' => $form->createView()));
+        return $this->render('FilmBundle:Back:modifyProd.html.twig', array(
+            'form_prod' => $form->createView(),
+            'name' => $prod->getName()
+        ));
     }
 
     /**

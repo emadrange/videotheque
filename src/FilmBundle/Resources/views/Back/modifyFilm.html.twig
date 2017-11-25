@@ -14,6 +14,8 @@
 {% block body %}
     {% include '@Film/Back/header.html.twig' %}
     <section>
+        <h3>Modification de "{{ title }}"</h3>
+        <a href="{{ path('admin_homepage') }}">Retour à l'administration</a>
         {{ form_start(form_film) }}
         <fieldset>
             <legend>Modifier les informations du film</legend>
