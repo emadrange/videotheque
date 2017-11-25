@@ -75,3 +75,17 @@
 
     {% include '@Film/Back/footer.html.twig' %}
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function(){
+            $('.datepicker').datepicker({
+                dateFormat: 'dd-mm-yy',
+                changeYear: true,
+                changeMonth: true,
+                yearRange: '1900:2100'
+            });
+        });
+    </script>
+{% endblock %}

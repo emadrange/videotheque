@@ -34,20 +34,34 @@ class FilmsType extends AbstractType
                 'required' => false
             ))
             ->add('resume', TextareaType::class, array(
-                'label' => 'forms.resume'
+                'label' => 'forms.resume',
+                'required' => false,
+                'attr' => array(
+                    'rows' => 6,
+                    'cols' => 40
+                )
             ))
             ->add('releaseyear', DateTimeType::class, array(
                 'label'       => 'forms.releaseyear',
-                'years'       => range(1935, 2040),
+                'years'       => range(1900, 2100),
                 'format'      => 'dd-MM-yyyy',
                 'widget'      => 'single_text',
-                'placeholder' => 'dd-mm-yyyy'
+                'placeholder' => 'dd-mm-yyyy',
+                'attr' => array(
+                    'class' => 'datepicker'
+                )
             ))
             ->add('duration', TextType::class, array(
-                'label' => 'forms.duration'
+                'label' => 'forms.duration',
+                'required' => false
             ))
             ->add('actor', TextareaType::class, array(
-                'label' => 'forms.actor'
+                'label' => 'forms.actor',
+                'required' => false,
+                'attr' => array(
+                    'rows' => 4,
+                    'cols' => 40
+                )
             ))
             ->add('genre', EntityType::class, array(
                 'class' => 'FilmBundle\Entity\Genres',
@@ -56,7 +70,8 @@ class FilmsType extends AbstractType
                         ->orderBy('g.name', 'ASC');
                 },
                 'choice_label' => 'name',
-                'label' => 'forms.genre'
+                'label' => 'forms.genre.label',
+                'placeholder' => 'forms.genre.placeholder'
             ))
             ->add('production', EntityType::class, array(
                 'class' => 'FilmBundle\Entity\Productions',
@@ -65,7 +80,8 @@ class FilmsType extends AbstractType
                         ->orderBy('p.name', 'ASC');
                 },
                 'choice_label' => 'name',
-                'label' => 'forms.production'
+                'label' => 'forms.production',
+                'placeholder' => 'forms.production.placeholder'
             ));
     }
     

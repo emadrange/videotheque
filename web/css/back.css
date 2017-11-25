@@ -127,6 +127,11 @@ form.form label {
     color: #334b5f;
 }
 
+form.form label.required::after {
+    content: '*';
+    color: darkred;
+}
+
 form.form.login label {
     width: 40%;
 }

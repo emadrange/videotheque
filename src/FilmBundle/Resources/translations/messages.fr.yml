@@ -1,15 +1,19 @@
 forms:
-    title: Titre
-    author: Auteur
-    cover: Jaquette
-    resume: Résumé
-    releaseyear: Année de sorti
-    duration: Durée
-    actor: Acteur
-    genre: Genre
-    production: Production
-    wording: Libellé
-    name: Nom
-    logo: Logo
-    save: Enregistrer
-    clear: Effacer
+    title: "Titre"
+    author: "Auteur"
+    cover: "Jaquette"
+    resume: "Résumé"
+    releaseyear: "Année de sorti"
+    duration: "Durée"
+    actor: "Acteur"
+    genre:
+        label: "Genre"
+        placeholder: "Sélectionner un genre"
+    production:
+        label: "Production"
+        placeholder: "Sélectionner une production"
+    wording: "Libellé"
+    name: "Nom"
+    logo: "Logo"
+    save: "Enregistrer"
+    clear: "Effacer"
