@@ -3,6 +3,7 @@
 namespace FilmBundle\Form;
 
 use Doctrine\ORM\EntityRepository;
+use FilmBundle\Entity\Films;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -28,7 +29,9 @@ class FilmsType extends AbstractType
                 'label' => 'forms.author'
             ))
             ->add('cover', FileType::class, array(
-                'label' => 'forms.cover'
+                'label' => 'forms.cover',
+                'data_class' => null,
+                'required' => false
             ))
             ->add('resume', TextareaType::class, array(
                 'label' => 'forms.resume'
@@ -72,7 +75,7 @@ class FilmsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'FilmBundle\Entity\Films',
+            'data_class' => Films::class,
             'translation_domain' => 'messages'
         ));
     }

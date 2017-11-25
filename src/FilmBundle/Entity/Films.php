@@ -73,11 +73,9 @@ class Films
      * @var string
      *
      * @ORM\Column(name="cover", type="string", length=50, nullable=true)
-     * @Assert\Length(
-     *     min="5",
-     *     max="50",
-     *     minMessage="validator.cover.min",
-     *     maxMessage="validator.cover.max"
+     * @Assert\File(
+     *     maxSize="500k",
+     *     maxSizeMessage="vaklidator.cover.maxsize"
      * )
      * @Assert\Image(
      *     mimeTypes={"image/png","image/jpeg"},
@@ -95,7 +93,7 @@ class Films
      *     maxMessage="validator.resume.max"
      * )
      * @Assert\Regex(
-     *     pattern="/^[a-z0-9éèàùüûôêë\(\)\s-,;\.':!]*$/i",
+     *     pattern="/^[a-z0-9éèàùüûôêëîï\(\)\s-,;\.':!]*$/i",
      *     message="validator.resume.regex"
      * )
      */
@@ -143,7 +141,7 @@ class Films
      *     maxMessage="validator.actor.max"
      * )
      * @Assert\Regex(
-     *     pattern="/^[a-z0-9éèàùüûôêë\(\)\s-,;\.':!]*$/i",
+     *     pattern="/^[a-z0-9éèàùüûôêëîï\(\)\s-,;\.':!]*$/i",
      *     message="validator.actor.regex"
      * )
      */

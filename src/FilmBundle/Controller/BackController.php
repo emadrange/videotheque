@@ -63,8 +63,11 @@ class BackController extends Controller
             $film = $form->getData();
 
             $cover = $form['cover']->getData();
-            $film->setCover($cover->getClientOriginalName());
-            $cover->move($this->getParameter('cover_path'), $cover->getClientOriginalName());
+            if ($cover !== null) {
+                $film->setCover($cover->getClientOriginalName());
+                $cover->move($this->getParameter('cover_path'), $cover->getClientOriginalName());
+            }
+
 
             $em->persist($film);
             $em->flush();
@@ -174,6 +177,13 @@ class BackController extends Controller
 
         if ($request->isMethod('POST') && $form->isValid()){
             $film = $form->getData();
+
+            $cover = $form['cover']->getData();
+            if ($cover !== null) {
+                $film->setCover($cover->getClientOriginalName());
+                $cover->move($this->getParameter('cover_path'), $cover->getClientOriginalName());
+            }
+
             $em->persist($film);
             $em->flush();
 

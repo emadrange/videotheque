@@ -9,7 +9,7 @@ imports:
 parameters:
     locale: fr
     logo_path: '%kernel.project_dir%/web/images/logo'
-    cover_path: '%kernel.project_dir%/web/images'
+    cover_path: '%kernel.project_dir%/web/images/cover'
 
 framework:
     #esi: ~
