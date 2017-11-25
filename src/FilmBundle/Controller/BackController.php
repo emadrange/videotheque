@@ -261,6 +261,13 @@ class BackController extends Controller
 
         if ($request->isMethod('POST') && $form->isValid()){
             $prod = $form->getData();
+
+            $logo = $form['logo']->getData();
+            if($logo !== null) {
+                $prod->setLogo($logo->getClientOriginalName());
+                $logo->move($this->getParameter('logo_path'), $logo->getClientOriginalName());
+            }
+
             $em->persist($prod);
             $em->flush();
 
