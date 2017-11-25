@@ -43,15 +43,11 @@ class Productions
      * @var string
      *
      * @ORM\Column(name="logo", type="string", length=50, nullable=true)
-     * @Assert\Length(
-     *     min="5",
-     *     max="50",
-     *     minMessage="validator.production.logo.min",
-     *     maxMessage="validator.production.logo.min"
-     * )
-     * @Assert\Regex(
-     *     pattern="/^[a-z0-9-_]*\.(jpg|png|gif)$/i",
-     *     message="validator.production.logo.regex"
+     * @Assert\File(
+     *     maxSize="500k",
+     *     maxSizeMessage="validator.production.logo.maxsize",
+     *     mimeTypes={"image/png","image/jpeg"},
+     *     mimeTypesMessage="validator.production.logo.mimetype"
      * )
      */
     private $logo;

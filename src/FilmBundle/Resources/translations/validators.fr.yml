@@ -11,7 +11,7 @@ validator:
         min: "Minimum 5 caractères pour la jaquette."
         max: "Maximum 50 caractères pour la jaquette."
         mimetype: "La jaquette n'est pas au bon format."
-        maxsize: "La taille du fichier est trop importante."
+        maxsize: "La taille de la jaquette est trop importante."
     resume:
         max: "Le résumé doit faire maximum 500 caractères."
         regex: "Le résumé comporte des caractères interdits."
@@ -36,3 +36,5 @@ validator:
             min: "5 caractères minimum pour le logo."
             max: "50 caractères maximum pour le logo."
             regex: "Le logo n'est pas au bon format."
+            maxsize: "La taille du logo est trop importante."
+            mimetype: "Le logo n'est pas au bon format."
