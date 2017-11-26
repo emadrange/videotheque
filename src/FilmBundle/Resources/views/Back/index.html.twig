@@ -12,16 +12,21 @@
 {% block body %}
     {% include '@Film/Back/header.html.twig' %}
     <section>
-        Nombre de films : {{ films | length }}<br>
-        <a href="{{ path('admin_film_insert') }}">Ajouter un film</a>
+        <h3>Liste des films</h3>
+        <p>Nombre de films : {{ films | length }}</p>
+        <p><a href="{{ path('admin_film_insert') }}">Ajouter un film</a></p>
     </section>
     <section>
         <ul>
             {% for film in films %}
-                <li><span class="title">{{ film.title }}</span> -
-                    <a href="{{ path('admin_film_show', {'id': film.id}) }}">Voir la fiche</a> -
-                    <a href="{{ path('admin_film_modify', {'id': film.id}) }}">Modifier</a> -
-                    <a href="{{ path('admin_film_delete', {'id': film.id}) }}" class="delete">Supprimer</a></li>
+                <li><span class="title">{{ film.title }}</span>
+                    <a href="{{ path('admin_film_show', {'id': film.id}) }}" class="ui-state-default ui-corner-all" title="{{ 'list.show' | trans }}">
+                        <span class="ui-icon ui-icon-search"></span></a>
+                    <a href="{{ path('admin_film_modify', {'id': film.id}) }}" class="ui-state-default ui-corner-all" title="{{ 'list.edit' | trans }}">
+                        <span class="ui-icon ui-icon-pencil"></span></a>
+                    <a href="{{ path('admin_film_delete', {'id': film.id}) }}" class="delete ui-state-default ui-corner-all" title="{{ 'list.delete' | trans }}">
+                        <psan class="ui-icon ui-icon-trash"></psan></a>
+                </li>
             {% endfor %}
         </ul>
     </section>

@@ -12,14 +12,17 @@
 {% block body %}
     {% include '@Film/Back/header.html.twig' %}
     <section>
+        <h3>Liste des productions</h3>
         <a href="{{ path('admin_prod_insert') }}">Ajouter une production</a>
     </section>
     <section>
         <ul>
         {% for prod in prods %}
-            <li><span class="title">{{ prod.name }}</span> -
-                <a href="{{ path('admin_prod_modify', {'id': prod.id}) }}">Modifier</a> -
-                <a href="{{ path('admin_prod_delete', {'id': prod.id}) }}" class="delete">Supprimer</a>
+            <li><span class="title">{{ prod.name }}</span>
+                <a href="{{ path('admin_prod_modify', {'id': prod.id}) }}" class="ui-state-default ui-corner-all" title="{{ 'list.edit' | trans }}">
+                    <sapn class="ui-icon ui-icon-pencil"></sapn></a>
+                <a href="{{ path('admin_prod_delete', {'id': prod.id}) }}" class="delete ui-state-default ui-corner-all" title="{{ 'list.delete' | trans }}">
+                    <sapn class="ui-icon ui-icon-trash"></sapn></a>
             </li>
         {% endfor %}
         </ul>

@@ -80,7 +80,7 @@ class FilmsType extends AbstractType
                         ->orderBy('p.name', 'ASC');
                 },
                 'choice_label' => 'name',
-                'label' => 'forms.production',
+                'label' => 'forms.production.label',
                 'placeholder' => 'forms.production.placeholder'
             ));
     }

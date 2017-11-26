@@ -17,3 +17,7 @@ forms:
     logo: "Logo"
     save: "Enregistrer"
     clear: "Effacer"
+list:
+    show: "Voir"
+    edit: "Editer"
+    delete: "Supprimer"

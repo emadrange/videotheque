@@ -52,9 +52,17 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'forms.save'))
+                'label' => 'forms.save',
+                'attr' => array(
+                    'class' => 'ui-button ui-widget ui-corner-all'
+                )
+            ))
             ->add('clear', ResetType::class, array(
-                'label' => 'forms.clear'));
+                'label' => 'forms.clear',
+                'attr' => array(
+                    'class' => 'ui-button ui-widget ui-corner-all'
+                )
+            ));
 
         $form->handleRequest($request);
 
@@ -96,7 +104,10 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'forms.save'
+                'label' => 'forms.save',
+                'attr' => array(
+                    'class' => 'ui-button ui-widget ui-corner-all'
+                )
             ));
 
         $form->handleRequest($request);
@@ -131,7 +142,10 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'forms.save'
+                'label' => 'forms.save',
+                'attr' => array(
+                    'class' => 'ui-button ui-widget ui-corner-all'
+                )
             ));
 
         $form->handleRequest($request);
@@ -177,7 +191,10 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'forms.save'
+                'label' => 'forms.save',
+                'attr' => array(
+                    'class' => 'ui-button ui-widget ui-corner-all'
+                )
             ));
 
         $form->handleRequest($request);
@@ -222,7 +239,10 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'forms.save'
+                'label' => 'forms.save',
+                'attr' => array(
+                    'class' => 'ui-button ui-widget ui-corner-all'
+                )
             ));
 
         $form->handleRequest($request);
@@ -260,7 +280,10 @@ class BackController extends Controller
             )
         ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'forms.save'
+                'label' => 'forms.save',
+                'attr' => array(
+                    'class' => 'ui-button ui-widget ui-corner-all'
+                )
             ));
 
         $form->handleRequest($request);
